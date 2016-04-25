@@ -1,0 +1,574 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		67591D4F1CC759EE007913A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 67591D4E1CC759EE007913A6 /* main.m */; };
+		67591D521CC759EE007913A6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 67591D511CC759EE007913A6 /* AppDelegate.m */; };
+		67591D551CC759EE007913A6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67591D541CC759EE007913A6 /* ViewController.m */; };
+		67591D581CC759EE007913A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67591D561CC759EE007913A6 /* Main.storyboard */; };
+		67591D5A1CC759EE007913A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67591D591CC759EE007913A6 /* Assets.xcassets */; };
+		67591D5D1CC759EE007913A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67591D5B1CC759EE007913A6 /* LaunchScreen.storyboard */; };
+		67591D681CC759EE007913A6 /* Neediator_AdminTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 67591D671CC759EE007913A6 /* Neediator_AdminTests.m */; };
+		67591D731CC759EE007913A6 /* Neediator_AdminUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 67591D721CC759EE007913A6 /* Neediator_AdminUITests.m */; };
+		6795D48D1CCDBB79005B387C /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6795D4851CCDBB79005B387C /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
+		6795D48E1CCDBB79005B387C /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6795D4861CCDBB79005B387C /* TPKeyboardAvoidingCollectionView.m */; };
+		6795D48F1CCDBB79005B387C /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6795D4871CCDBB79005B387C /* TPKeyboardAvoidingTableView.m */; };
+		6795D4901CCDBB79005B387C /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6795D4881CCDBB79005B387C /* TPKeyboardAvoidingScrollView.m */; };
+		6795D4951CCDBB89005B387C /* NATextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6795D4911CCDBB89005B387C /* NATextView.m */; };
+		6795D4961CCDBB89005B387C /* NATextfield.m in Sources */ = {isa = PBXBuildFile; fileRef = 6795D4921CCDBB89005B387C /* NATextfield.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		67591D641CC759EE007913A6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67591D421CC759EE007913A6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 67591D491CC759EE007913A6;
+			remoteInfo = "Neediator Admin";
+		};
+		67591D6F1CC759EE007913A6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67591D421CC759EE007913A6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 67591D491CC759EE007913A6;
+			remoteInfo = "Neediator Admin";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		67591D4A1CC759EE007913A6 /* Neediator Admin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Neediator Admin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		67591D4E1CC759EE007913A6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		67591D501CC759EE007913A6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		67591D511CC759EE007913A6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		67591D531CC759EE007913A6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		67591D541CC759EE007913A6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		67591D571CC759EE007913A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		67591D591CC759EE007913A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		67591D5C1CC759EE007913A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		67591D5E1CC759EE007913A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67591D631CC759EE007913A6 /* Neediator AdminTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Neediator AdminTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		67591D671CC759EE007913A6 /* Neediator_AdminTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Neediator_AdminTests.m; sourceTree = "<group>"; };
+		67591D691CC759EE007913A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67591D6E1CC759EE007913A6 /* Neediator AdminUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Neediator AdminUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		67591D721CC759EE007913A6 /* Neediator_AdminUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Neediator_AdminUITests.m; sourceTree = "<group>"; };
+		67591D741CC759EF007913A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6795D4851CCDBB79005B387C /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+TPKeyboardAvoidingAdditions.m"; path = "TPKeyboardAvoiding/UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
+		6795D4861CCDBB79005B387C /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TPKeyboardAvoidingCollectionView.m; path = TPKeyboardAvoiding/TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
+		6795D4871CCDBB79005B387C /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TPKeyboardAvoidingTableView.m; path = TPKeyboardAvoiding/TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
+		6795D4881CCDBB79005B387C /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TPKeyboardAvoidingScrollView.m; path = TPKeyboardAvoiding/TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		6795D4891CCDBB79005B387C /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+TPKeyboardAvoidingAdditions.h"; path = "TPKeyboardAvoiding/UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
+		6795D48A1CCDBB79005B387C /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPKeyboardAvoidingCollectionView.h; path = TPKeyboardAvoiding/TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
+		6795D48B1CCDBB79005B387C /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPKeyboardAvoidingScrollView.h; path = TPKeyboardAvoiding/TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		6795D48C1CCDBB79005B387C /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPKeyboardAvoidingTableView.h; path = TPKeyboardAvoiding/TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
+		6795D4911CCDBB89005B387C /* NATextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NATextView.m; path = "Custom Controls/NATextView.m"; sourceTree = "<group>"; };
+		6795D4921CCDBB89005B387C /* NATextfield.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NATextfield.m; path = "Custom Controls/NATextfield.m"; sourceTree = "<group>"; };
+		6795D4931CCDBB89005B387C /* NATextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NATextView.h; path = "Custom Controls/NATextView.h"; sourceTree = "<group>"; };
+		6795D4941CCDBB89005B387C /* NATextfield.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NATextfield.h; path = "Custom Controls/NATextfield.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		67591D471CC759EE007913A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67591D601CC759EE007913A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67591D6B1CC759EE007913A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		67591D411CC759EE007913A6 = {
+			isa = PBXGroup;
+			children = (
+				67591D4C1CC759EE007913A6 /* Neediator Admin */,
+				67591D661CC759EE007913A6 /* Neediator AdminTests */,
+				67591D711CC759EE007913A6 /* Neediator AdminUITests */,
+				67591D4B1CC759EE007913A6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		67591D4B1CC759EE007913A6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				67591D4A1CC759EE007913A6 /* Neediator Admin.app */,
+				67591D631CC759EE007913A6 /* Neediator AdminTests.xctest */,
+				67591D6E1CC759EE007913A6 /* Neediator AdminUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		67591D4C1CC759EE007913A6 /* Neediator Admin */ = {
+			isa = PBXGroup;
+			children = (
+				67591D501CC759EE007913A6 /* AppDelegate.h */,
+				67591D511CC759EE007913A6 /* AppDelegate.m */,
+				67591D531CC759EE007913A6 /* ViewController.h */,
+				67591D541CC759EE007913A6 /* ViewController.m */,
+				67591D561CC759EE007913A6 /* Main.storyboard */,
+				67591D591CC759EE007913A6 /* Assets.xcassets */,
+				67591D5B1CC759EE007913A6 /* LaunchScreen.storyboard */,
+				67591D5E1CC759EE007913A6 /* Info.plist */,
+				6795D4971CCDBB8E005B387C /* Custom Controls */,
+				6795D4841CCDBB14005B387C /* TPKeyboardAvoiding */,
+				67591D4D1CC759EE007913A6 /* Supporting Files */,
+			);
+			path = "Neediator Admin";
+			sourceTree = "<group>";
+		};
+		67591D4D1CC759EE007913A6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				67591D4E1CC759EE007913A6 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		67591D661CC759EE007913A6 /* Neediator AdminTests */ = {
+			isa = PBXGroup;
+			children = (
+				67591D671CC759EE007913A6 /* Neediator_AdminTests.m */,
+				67591D691CC759EE007913A6 /* Info.plist */,
+			);
+			path = "Neediator AdminTests";
+			sourceTree = "<group>";
+		};
+		67591D711CC759EE007913A6 /* Neediator AdminUITests */ = {
+			isa = PBXGroup;
+			children = (
+				67591D721CC759EE007913A6 /* Neediator_AdminUITests.m */,
+				67591D741CC759EF007913A6 /* Info.plist */,
+			);
+			path = "Neediator AdminUITests";
+			sourceTree = "<group>";
+		};
+		6795D4841CCDBB14005B387C /* TPKeyboardAvoiding */ = {
+			isa = PBXGroup;
+			children = (
+				6795D4851CCDBB79005B387C /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
+				6795D4861CCDBB79005B387C /* TPKeyboardAvoidingCollectionView.m */,
+				6795D4871CCDBB79005B387C /* TPKeyboardAvoidingTableView.m */,
+				6795D4881CCDBB79005B387C /* TPKeyboardAvoidingScrollView.m */,
+				6795D4891CCDBB79005B387C /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
+				6795D48A1CCDBB79005B387C /* TPKeyboardAvoidingCollectionView.h */,
+				6795D48B1CCDBB79005B387C /* TPKeyboardAvoidingScrollView.h */,
+				6795D48C1CCDBB79005B387C /* TPKeyboardAvoidingTableView.h */,
+			);
+			name = TPKeyboardAvoiding;
+			sourceTree = "<group>";
+		};
+		6795D4971CCDBB8E005B387C /* Custom Controls */ = {
+			isa = PBXGroup;
+			children = (
+				6795D4911CCDBB89005B387C /* NATextView.m */,
+				6795D4921CCDBB89005B387C /* NATextfield.m */,
+				6795D4931CCDBB89005B387C /* NATextView.h */,
+				6795D4941CCDBB89005B387C /* NATextfield.h */,
+			);
+			name = "Custom Controls";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		67591D491CC759EE007913A6 /* Neediator Admin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 67591D771CC759EF007913A6 /* Build configuration list for PBXNativeTarget "Neediator Admin" */;
+			buildPhases = (
+				67591D461CC759EE007913A6 /* Sources */,
+				67591D471CC759EE007913A6 /* Frameworks */,
+				67591D481CC759EE007913A6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Neediator Admin";
+			productName = "Neediator Admin";
+			productReference = 67591D4A1CC759EE007913A6 /* Neediator Admin.app */;
+			productType = "com.apple.product-type.application";
+		};
+		67591D621CC759EE007913A6 /* Neediator AdminTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 67591D7A1CC759EF007913A6 /* Build configuration list for PBXNativeTarget "Neediator AdminTests" */;
+			buildPhases = (
+				67591D5F1CC759EE007913A6 /* Sources */,
+				67591D601CC759EE007913A6 /* Frameworks */,
+				67591D611CC759EE007913A6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				67591D651CC759EE007913A6 /* PBXTargetDependency */,
+			);
+			name = "Neediator AdminTests";
+			productName = "Neediator AdminTests";
+			productReference = 67591D631CC759EE007913A6 /* Neediator AdminTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		67591D6D1CC759EE007913A6 /* Neediator AdminUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 67591D7D1CC759EF007913A6 /* Build configuration list for PBXNativeTarget "Neediator AdminUITests" */;
+			buildPhases = (
+				67591D6A1CC759EE007913A6 /* Sources */,
+				67591D6B1CC759EE007913A6 /* Frameworks */,
+				67591D6C1CC759EE007913A6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				67591D701CC759EE007913A6 /* PBXTargetDependency */,
+			);
+			name = "Neediator AdminUITests";
+			productName = "Neediator AdminUITests";
+			productReference = 67591D6E1CC759EE007913A6 /* Neediator AdminUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		67591D421CC759EE007913A6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Vinod Rathod";
+				TargetAttributes = {
+					67591D491CC759EE007913A6 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					67591D621CC759EE007913A6 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 67591D491CC759EE007913A6;
+					};
+					67591D6D1CC759EE007913A6 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 67591D491CC759EE007913A6;
+					};
+				};
+			};
+			buildConfigurationList = 67591D451CC759EE007913A6 /* Build configuration list for PBXProject "Neediator Admin" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 67591D411CC759EE007913A6;
+			productRefGroup = 67591D4B1CC759EE007913A6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				67591D491CC759EE007913A6 /* Neediator Admin */,
+				67591D621CC759EE007913A6 /* Neediator AdminTests */,
+				67591D6D1CC759EE007913A6 /* Neediator AdminUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		67591D481CC759EE007913A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67591D5D1CC759EE007913A6 /* LaunchScreen.storyboard in Resources */,
+				67591D5A1CC759EE007913A6 /* Assets.xcassets in Resources */,
+				67591D581CC759EE007913A6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67591D611CC759EE007913A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67591D6C1CC759EE007913A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		67591D461CC759EE007913A6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6795D4901CCDBB79005B387C /* TPKeyboardAvoidingScrollView.m in Sources */,
+				6795D48E1CCDBB79005B387C /* TPKeyboardAvoidingCollectionView.m in Sources */,
+				67591D551CC759EE007913A6 /* ViewController.m in Sources */,
+				6795D48D1CCDBB79005B387C /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
+				6795D48F1CCDBB79005B387C /* TPKeyboardAvoidingTableView.m in Sources */,
+				67591D521CC759EE007913A6 /* AppDelegate.m in Sources */,
+				6795D4961CCDBB89005B387C /* NATextfield.m in Sources */,
+				6795D4951CCDBB89005B387C /* NATextView.m in Sources */,
+				67591D4F1CC759EE007913A6 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67591D5F1CC759EE007913A6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67591D681CC759EE007913A6 /* Neediator_AdminTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67591D6A1CC759EE007913A6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67591D731CC759EE007913A6 /* Neediator_AdminUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		67591D651CC759EE007913A6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 67591D491CC759EE007913A6 /* Neediator Admin */;
+			targetProxy = 67591D641CC759EE007913A6 /* PBXContainerItemProxy */;
+		};
+		67591D701CC759EE007913A6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 67591D491CC759EE007913A6 /* Neediator Admin */;
+			targetProxy = 67591D6F1CC759EE007913A6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		67591D561CC759EE007913A6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				67591D571CC759EE007913A6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		67591D5B1CC759EE007913A6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				67591D5C1CC759EE007913A6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		67591D751CC759EF007913A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		67591D761CC759EF007913A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		67591D781CC759EF007913A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Neediator Admin/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.advertotechnology.Neediator-Admin";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		67591D791CC759EF007913A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Neediator Admin/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.advertotechnology.Neediator-Admin";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		67591D7B1CC759EF007913A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Neediator AdminTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.advertotechnology.Neediator-AdminTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Neediator Admin.app/Neediator Admin";
+			};
+			name = Debug;
+		};
+		67591D7C1CC759EF007913A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Neediator AdminTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.advertotechnology.Neediator-AdminTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Neediator Admin.app/Neediator Admin";
+			};
+			name = Release;
+		};
+		67591D7E1CC759EF007913A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Neediator AdminUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.advertotechnology.Neediator-AdminUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Neediator Admin";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		67591D7F1CC759EF007913A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Neediator AdminUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.advertotechnology.Neediator-AdminUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Neediator Admin";
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		67591D451CC759EE007913A6 /* Build configuration list for PBXProject "Neediator Admin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67591D751CC759EF007913A6 /* Debug */,
+				67591D761CC759EF007913A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		67591D771CC759EF007913A6 /* Build configuration list for PBXNativeTarget "Neediator Admin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67591D781CC759EF007913A6 /* Debug */,
+				67591D791CC759EF007913A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		67591D7A1CC759EF007913A6 /* Build configuration list for PBXNativeTarget "Neediator AdminTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67591D7B1CC759EF007913A6 /* Debug */,
+				67591D7C1CC759EF007913A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		67591D7D1CC759EF007913A6 /* Build configuration list for PBXNativeTarget "Neediator AdminUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67591D7E1CC759EF007913A6 /* Debug */,
+				67591D7F1CC759EF007913A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 67591D421CC759EE007913A6 /* Project object */;
+}
