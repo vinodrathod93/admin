@@ -21,6 +21,10 @@
 		6795D4901CCDBB79005B387C /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6795D4881CCDBB79005B387C /* TPKeyboardAvoidingScrollView.m */; };
 		6795D4951CCDBB89005B387C /* NATextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6795D4911CCDBB89005B387C /* NATextView.m */; };
 		6795D4961CCDBB89005B387C /* NATextfield.m in Sources */ = {isa = PBXBuildFile; fileRef = 6795D4921CCDBB89005B387C /* NATextfield.m */; };
+		8231AF3F1CD4A7B6001A5379 /* NeediatorAdminUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 8231AF3E1CD4A7B6001A5379 /* NeediatorAdminUtility.m */; };
+		8231AF421CD4BF99001A5379 /* StoreDataRealm.m in Sources */ = {isa = PBXBuildFile; fileRef = 8231AF411CD4BF99001A5379 /* StoreDataRealm.m */; };
+		8231AF451CD4C521001A5379 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8231AF441CD4C521001A5379 /* ListViewController.m */; };
+		9DE80D2B58E2A4977CC22A4D /* libPods-Neediator Admin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B116338AA209D87A1A297A5 /* libPods-Neediator Admin.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +73,17 @@
 		6795D4921CCDBB89005B387C /* NATextfield.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NATextfield.m; path = "Custom Controls/NATextfield.m"; sourceTree = "<group>"; };
 		6795D4931CCDBB89005B387C /* NATextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NATextView.h; path = "Custom Controls/NATextView.h"; sourceTree = "<group>"; };
 		6795D4941CCDBB89005B387C /* NATextfield.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NATextfield.h; path = "Custom Controls/NATextfield.h"; sourceTree = "<group>"; };
+		6B116338AA209D87A1A297A5 /* libPods-Neediator Admin.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Neediator Admin.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8231AF3B1CD49E3F001A5379 /* NAdminHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NAdminHelper.h; sourceTree = "<group>"; };
+		8231AF3C1CD49F4C001A5379 /* NeediatorAdmin.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NeediatorAdmin.pch; sourceTree = "<group>"; };
+		8231AF3D1CD4A7B6001A5379 /* NeediatorAdminUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NeediatorAdminUtility.h; sourceTree = "<group>"; };
+		8231AF3E1CD4A7B6001A5379 /* NeediatorAdminUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NeediatorAdminUtility.m; sourceTree = "<group>"; };
+		8231AF401CD4BF99001A5379 /* StoreDataRealm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreDataRealm.h; sourceTree = "<group>"; };
+		8231AF411CD4BF99001A5379 /* StoreDataRealm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreDataRealm.m; sourceTree = "<group>"; };
+		8231AF431CD4C521001A5379 /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
+		8231AF441CD4C521001A5379 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
+		BB07B4ECF15CE430717BECA3 /* Pods-Neediator Admin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neediator Admin.release.xcconfig"; path = "Pods/Target Support Files/Pods-Neediator Admin/Pods-Neediator Admin.release.xcconfig"; sourceTree = "<group>"; };
+		BB8164C71886162D5EB0E74E /* Pods-Neediator Admin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neediator Admin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Neediator Admin/Pods-Neediator Admin.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DE80D2B58E2A4977CC22A4D /* libPods-Neediator Admin.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +112,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B492D3FBBEDAC459A37284E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BB8164C71886162D5EB0E74E /* Pods-Neediator Admin.debug.xcconfig */,
+				BB07B4ECF15CE430717BECA3 /* Pods-Neediator Admin.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		67591D411CC759EE007913A6 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +128,8 @@
 				67591D661CC759EE007913A6 /* Neediator AdminTests */,
 				67591D711CC759EE007913A6 /* Neediator AdminUITests */,
 				67591D4B1CC759EE007913A6 /* Products */,
+				5B492D3FBBEDAC459A37284E /* Pods */,
+				89570C81A5FF940EEDE4A887 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,13 +150,20 @@
 				67591D511CC759EE007913A6 /* AppDelegate.m */,
 				67591D531CC759EE007913A6 /* ViewController.h */,
 				67591D541CC759EE007913A6 /* ViewController.m */,
+				8231AF401CD4BF99001A5379 /* StoreDataRealm.h */,
+				8231AF411CD4BF99001A5379 /* StoreDataRealm.m */,
+				8231AF3D1CD4A7B6001A5379 /* NeediatorAdminUtility.h */,
+				8231AF3E1CD4A7B6001A5379 /* NeediatorAdminUtility.m */,
 				67591D561CC759EE007913A6 /* Main.storyboard */,
 				67591D591CC759EE007913A6 /* Assets.xcassets */,
 				67591D5B1CC759EE007913A6 /* LaunchScreen.storyboard */,
 				67591D5E1CC759EE007913A6 /* Info.plist */,
+				8231AF3B1CD49E3F001A5379 /* NAdminHelper.h */,
 				6795D4971CCDBB8E005B387C /* Custom Controls */,
 				6795D4841CCDBB14005B387C /* TPKeyboardAvoiding */,
 				67591D4D1CC759EE007913A6 /* Supporting Files */,
+				8231AF431CD4C521001A5379 /* ListViewController.h */,
+				8231AF441CD4C521001A5379 /* ListViewController.m */,
 			);
 			path = "Neediator Admin";
 			sourceTree = "<group>";
@@ -138,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				67591D4E1CC759EE007913A6 /* main.m */,
+				8231AF3C1CD49F4C001A5379 /* NeediatorAdmin.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -186,6 +221,14 @@
 			name = "Custom Controls";
 			sourceTree = "<group>";
 		};
+		89570C81A5FF940EEDE4A887 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6B116338AA209D87A1A297A5 /* libPods-Neediator Admin.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -193,9 +236,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 67591D771CC759EF007913A6 /* Build configuration list for PBXNativeTarget "Neediator Admin" */;
 			buildPhases = (
+				605FC007AEB7F8203EC3CC01 /* Check Pods Manifest.lock */,
 				67591D461CC759EE007913A6 /* Sources */,
 				67591D471CC759EE007913A6 /* Frameworks */,
 				67591D481CC759EE007913A6 /* Resources */,
+				A559C106EF49E173E4BDAC06 /* Embed Pods Frameworks */,
+				FE9BB91E72BA4349E281F973 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -311,15 +357,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		605FC007AEB7F8203EC3CC01 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A559C106EF49E173E4BDAC06 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Neediator Admin/Pods-Neediator Admin-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE9BB91E72BA4349E281F973 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Neediator Admin/Pods-Neediator Admin-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		67591D461CC759EE007913A6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8231AF3F1CD4A7B6001A5379 /* NeediatorAdminUtility.m in Sources */,
 				6795D4901CCDBB79005B387C /* TPKeyboardAvoidingScrollView.m in Sources */,
+				8231AF451CD4C521001A5379 /* ListViewController.m in Sources */,
 				6795D48E1CCDBB79005B387C /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				67591D551CC759EE007913A6 /* ViewController.m in Sources */,
 				6795D48D1CCDBB79005B387C /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
+				8231AF421CD4BF99001A5379 /* StoreDataRealm.m in Sources */,
 				6795D48F1CCDBB79005B387C /* TPKeyboardAvoidingTableView.m in Sources */,
 				67591D521CC759EE007913A6 /* AppDelegate.m in Sources */,
 				6795D4961CCDBB89005B387C /* NATextfield.m in Sources */,
@@ -461,8 +558,11 @@
 		};
 		67591D781CC759EF007913A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB8164C71886162D5EB0E74E /* Pods-Neediator Admin.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Neediator Admin/NeediatorAdmin.pch";
 				INFOPLIST_FILE = "Neediator Admin/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.advertotechnology.Neediator-Admin";
@@ -472,8 +572,11 @@
 		};
 		67591D791CC759EF007913A6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB07B4ECF15CE430717BECA3 /* Pods-Neediator Admin.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Neediator Admin/NeediatorAdmin.pch";
 				INFOPLIST_FILE = "Neediator Admin/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.advertotechnology.Neediator-Admin";

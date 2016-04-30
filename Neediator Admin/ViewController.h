@@ -27,5 +27,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *latLngLabel;
 
 @property(nonatomic, strong) CLLocationManager *locationManager;
+@property (weak, nonatomic) IBOutlet UIButton *saveButton;
 @end
 

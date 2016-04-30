@@ -9,9 +9,9 @@
 #import "ViewController.h"
 
 @interface ViewController ()
-{
-    UIActivityIndicatorView *activityView;
-}
+
+@property (nonatomic, strong) UIActivityIndicatorView *activityView;
+
 @end
 
 @implementation ViewController 
@@ -19,14 +19,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = @"ADD";
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(dismissVC:)];
     
     self.locationManager = [[CLLocationManager alloc] init];
     _geocoder = [[CLGeocoder alloc] init];
     
-    activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    [activityView setCenter:CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height/2)];
+    _activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    [_activityView setCenter:CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height/2)];
     
-    [self.view addSubview:activityView];
+    [self.view addSubview:_activityView];
     
     self.locationManager.delegate = self;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
@@ -46,6 +48,7 @@
 
     
     [self.currentLocationButton addTarget:self action:@selector(selectCurrentLocation) forControlEvents:UIControlEventTouchUpInside];
+    [self.saveButton addTarget:self action:@selector(saveData:) forControlEvents:UIControlEventTouchUpInside];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -55,13 +58,17 @@
 }
 
 
+-(void)dismissVC:(id)sender {
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+}
+
 -(void)selectCurrentLocation {
     
     [self.currentLocationButton setTitle:@"Tap to Capture Location" forState:UIControlStateNormal];
     
     
     [self.locationManager startUpdatingLocation];
-    [activityView startAnimating];
+    [_activityView startAnimating];
     
 }
 
@@ -73,6 +80,7 @@
 {
     NSLog(@"didFailWithError: %@", [error localizedDescription]);
     
+    [_activityView stopAnimating];
     
     if ([error domain] == kCLErrorDomain) {
         switch ([error code]) {
@@ -85,13 +93,12 @@
                 NSLog(@"Location Unknown");
                 
             default:
-                NSLog(@"Failed to get the location");
+                [NeediatorAdminUtility alert:@"Neediator" withMessage:@"Something Went Wrong. Failed to get the location" onController:self];
                 break;
         }
     } else {
-        UIAlertView *errorAlert = [[UIAlertView alloc]
-                                   initWithTitle:@"Neediator" message:@"Failed to Get Your Location" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [errorAlert show];
+        
+        [NeediatorAdminUtility alert:@"Neediator" withMessage:@"Failed to Get your Location" onController:self];
     }
     
     
@@ -124,7 +131,7 @@
                   _placemark.country);
             
             
-            [activityView stopAnimating];
+            [_activityView stopAnimating];
             
             self.latLngLabel.text = [NSString stringWithFormat:@"%f, %f", currentLocation.coordinate.latitude, currentLocation.coordinate.longitude];
             
@@ -153,9 +160,7 @@
             [[UIApplication sharedApplication] openURL:settingURL];
         }
         else {
-            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Go to Settings" message:@"Location services are not enabled on your device. Please go to settings and enable location service to use this feature." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-            
-            [alert show];
+            [NeediatorAdminUtility alert:@"Go to Settings" withMessage:@"Location services are not enabled on your device. Please go to settings and enable location service to use this feature." onController:self];
         }
         
     }];
@@ -167,4 +172,40 @@
     
     
 }
+
+
+-(void)saveData:(id)sender {
+    
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        RLMRealm *realm = [RLMRealm defaultRealm];
+        
+        [realm beginWriteTransaction];
+        
+        StoreDataRealm *storeRealm = [[StoreDataRealm alloc] init];
+        storeRealm.name = self.storenameTF.text;
+        storeRealm.latitude = [NSString stringWithFormat:@"%f", self.locationManager.location.coordinate.latitude];
+        storeRealm.longitude = [NSString stringWithFormat:@"%f", self.locationManager.location.coordinate.longitude];
+        storeRealm.notedPoints = self.pointNotedTF.text;
+        storeRealm.notes = self.notesTF.text;
+        
+        [realm addObject:storeRealm];
+        [realm commitWriteTransaction];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            RLMRealm *realmMainThread = [RLMRealm defaultRealm];
+            
+            RLMResults *allData = [StoreDataRealm allObjectsInRealm:realmMainThread];
+            
+            logm(allData);
+            logm(@"Data Saved");
+        });
+        
+    });
+}
+
+
+
+
+
 @end
