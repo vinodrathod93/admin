@@ -24,6 +24,7 @@
 		8231AF3F1CD4A7B6001A5379 /* NeediatorAdminUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 8231AF3E1CD4A7B6001A5379 /* NeediatorAdminUtility.m */; };
 		8231AF421CD4BF99001A5379 /* StoreDataRealm.m in Sources */ = {isa = PBXBuildFile; fileRef = 8231AF411CD4BF99001A5379 /* StoreDataRealm.m */; };
 		8231AF451CD4C521001A5379 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8231AF441CD4C521001A5379 /* ListViewController.m */; };
+		82C1D1CA1CD8D6CA0058B9C0 /* RatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C1D1C91CD8D6CA0058B9C0 /* RatingView.m */; };
 		9DE80D2B58E2A4977CC22A4D /* libPods-Neediator Admin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B116338AA209D87A1A297A5 /* libPods-Neediator Admin.a */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +83,8 @@
 		8231AF411CD4BF99001A5379 /* StoreDataRealm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreDataRealm.m; sourceTree = "<group>"; };
 		8231AF431CD4C521001A5379 /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
 		8231AF441CD4C521001A5379 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
+		82C1D1C81CD8D6CA0058B9C0 /* RatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingView.h; sourceTree = "<group>"; };
+		82C1D1C91CD8D6CA0058B9C0 /* RatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingView.m; sourceTree = "<group>"; };
 		BB07B4ECF15CE430717BECA3 /* Pods-Neediator Admin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neediator Admin.release.xcconfig"; path = "Pods/Target Support Files/Pods-Neediator Admin/Pods-Neediator Admin.release.xcconfig"; sourceTree = "<group>"; };
 		BB8164C71886162D5EB0E74E /* Pods-Neediator Admin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neediator Admin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Neediator Admin/Pods-Neediator Admin.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -154,6 +157,8 @@
 				8231AF411CD4BF99001A5379 /* StoreDataRealm.m */,
 				8231AF3D1CD4A7B6001A5379 /* NeediatorAdminUtility.h */,
 				8231AF3E1CD4A7B6001A5379 /* NeediatorAdminUtility.m */,
+				82C1D1C81CD8D6CA0058B9C0 /* RatingView.h */,
+				82C1D1C91CD8D6CA0058B9C0 /* RatingView.m */,
 				67591D561CC759EE007913A6 /* Main.storyboard */,
 				67591D591CC759EE007913A6 /* Assets.xcassets */,
 				67591D5B1CC759EE007913A6 /* LaunchScreen.storyboard */,
@@ -421,6 +426,7 @@
 				67591D521CC759EE007913A6 /* AppDelegate.m in Sources */,
 				6795D4961CCDBB89005B387C /* NATextfield.m in Sources */,
 				6795D4951CCDBB89005B387C /* NATextView.m in Sources */,
+				82C1D1CA1CD8D6CA0058B9C0 /* RatingView.m in Sources */,
 				67591D4F1CC759EE007913A6 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -21,6 +21,7 @@
     
     self.title = @"ADD";
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(dismissVC:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveData:)];
     
     self.locationManager = [[CLLocationManager alloc] init];
     _geocoder = [[CLGeocoder alloc] init];
@@ -50,12 +51,97 @@
     [self.currentLocationButton addTarget:self action:@selector(selectCurrentLocation) forControlEvents:UIControlEventTouchUpInside];
     [self.saveButton addTarget:self action:@selector(saveData:) forControlEvents:UIControlEventTouchUpInside];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    [self hideCollectionView:YES];
+    
+    [self.cameraButton addTarget:self action:@selector(openCamera:) forControlEvents:UIControlEventTouchUpOutside];
+    [self.libraryButton addTarget:self action:@selector(openLibrary:) forControlEvents:UIControlEventTouchUpOutside];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+
+
+-(void)openCamera:(UIButton *)sender {
+    
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = NO;
+    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    
+    [self presentViewController:picker animated:YES completion:NULL];
+}
+
+-(void)openLibrary:(UIButton *)sender {
+    
+    NSMutableArray *photos = [[NSMutableArray alloc] init];
+    NSMutableArray *thumbs = [[NSMutableArray alloc] init];
+    
+    @synchronized(_assets) {
+        NSMutableArray *copy = [_assets copy];
+        if (NSClassFromString(@"PHAsset")) {
+            // Photos library
+            UIScreen *screen = [UIScreen mainScreen];
+            CGFloat scale = screen.scale;
+            // Sizing is very rough... more thought required in a real implementation
+            CGFloat imageSize = MAX(screen.bounds.size.width, screen.bounds.size.height) * 1.5;
+            CGSize imageTargetSize = CGSizeMake(imageSize * scale, imageSize * scale);
+            CGSize thumbTargetSize = CGSizeMake(imageSize / 3.0 * scale, imageSize / 3.0 * scale);
+            for (PHAsset *asset in copy) {
+                [photos addObject:[MWPhoto photoWithAsset:asset targetSize:imageTargetSize]];
+                [thumbs addObject:[MWPhoto photoWithAsset:asset targetSize:thumbTargetSize]];
+            }
+        } else {
+            // Assets library
+            for (ALAsset *asset in copy) {
+                MWPhoto *photo = [MWPhoto photoWithURL:asset.defaultRepresentation.url];
+                [photos addObject:photo];
+                MWPhoto *thumb = [MWPhoto photoWithImage:[UIImage imageWithCGImage:asset.thumbnail]];
+                [thumbs addObject:thumb];
+                if ([asset valueForProperty:ALAssetPropertyType] == ALAssetTypeVideo) {
+                    photo.videoURL = asset.defaultRepresentation.url;
+                    thumb.isVideo = true;
+                }
+            }
+        }
+        
+    }
+    
+    self.photos = photos;
+    self.thumbs = thumbs;
+    
+    browser = [[NeediatorPhotoBrowser alloc] initWithDelegate:self];
+    browser.displayActionButton = NO;
+    browser.displayNavArrows = NO;
+    browser.displaySelectionButtons = YES;
+    browser.alwaysShowControls = YES;
+    browser.zoomPhotosToFill = YES;
+    browser.enableGrid = NO;
+    browser.startOnGrid = YES;
+    browser.enableSwipeToDismiss = NO;
+    browser.autoPlayOnAppear = NO;
+    [browser setCurrentPhotoIndex:0];
+    
+    
+    if (_selections != nil) {
+        NSLog(@"Already Selected");
+    }
+    else if (browser.displaySelectionButtons) {
+        _selections = [NSMutableArray new];
+        for (int i = 0; i < photos.count; i++) {
+            [_selections addObject:[NSNumber numberWithBool:NO]];
+        }
+    }
+    
+    UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:browser];
+    nc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:nc animated:YES completion:nil];
+}
+
 
 
 -(void)dismissVC:(id)sender {
@@ -199,12 +285,24 @@
             
             logm(allData);
             logm(@"Data Saved");
+            
+            
+            [self dismissVC:nil];
         });
         
     });
 }
 
 
+
+-(void)hideButtons:(BOOL)hide {
+    self.cameraButton.hidden = hide;
+    self.libraryButton.hidden = hide;
+}
+
+-(void)hideCollectionView:(BOOL)hide {
+    self.collectionView.hidden = hide;
+}
 
 
 

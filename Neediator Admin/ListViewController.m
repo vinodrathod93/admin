@@ -20,22 +20,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    RLMRealm *realmMainThread = [RLMRealm defaultRealm];
-    RLMResults *allData = [StoreDataRealm allObjectsInRealm:realmMainThread];
-    
-    self.listings = allData;
-    
-    
-    
-    
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addnewListing:)];
-    
     
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    
+    RLMRealm *realmMainThread = [RLMRealm defaultRealm];
+    RLMResults *allData = [StoreDataRealm allObjectsInRealm:realmMainThread];
+    
+    self.listings = allData;
+    
+    [self.tableView reloadData];
 }
 
 #pragma mark - Table view data source

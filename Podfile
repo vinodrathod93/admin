@@ -6,6 +6,7 @@
 target 'Neediator Admin' do
 
 pod 'Realm'
+pod 'MWPhotoBrowser'
 
 end
 
