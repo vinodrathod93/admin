@@ -10,6 +10,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "NATextView.h"
 #import "NATextfield.h"
+#import "RatingView.h"
 
 
 @interface ViewController : UIViewController<CLLocationManagerDelegate>
@@ -28,5 +29,14 @@
 
 @property(nonatomic, strong) CLLocationManager *locationManager;
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
+
+
+@property (weak, nonatomic) IBOutlet RatingView *ratingsView;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+
+
+@property (weak, nonatomic) IBOutlet UIButton *cameraButton;
+@property (weak, nonatomic) IBOutlet UIButton *libraryButton;
+
 @end
 
