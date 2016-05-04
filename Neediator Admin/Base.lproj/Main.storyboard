@@ -92,16 +92,57 @@
                                                     <inset key="sectionInset" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="PWC-WU-aLL">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="PWC-WU-aLL" customClass="ListingCollectionViewCell">
                                                         <rect key="frame" x="5" y="12" width="100" height="120"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                             <rect key="frame" x="0.0" y="0.0" width="100" height="120"/>
                                                             <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r3e-1a-wt4">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="120"/>
+                                                                    <subviews>
+                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VTJ-mq-pHG">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="100" height="120"/>
+                                                                            <animations/>
+                                                                        </imageView>
+                                                                    </subviews>
+                                                                    <animations/>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="trailing" secondItem="VTJ-mq-pHG" secondAttribute="trailing" id="8PN-wS-Lmm"/>
+                                                                        <constraint firstItem="VTJ-mq-pHG" firstAttribute="leading" secondItem="r3e-1a-wt4" secondAttribute="leading" id="L6t-4d-dxC"/>
+                                                                        <constraint firstItem="VTJ-mq-pHG" firstAttribute="top" secondItem="r3e-1a-wt4" secondAttribute="top" id="v29-lM-Fso"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="VTJ-mq-pHG" secondAttribute="bottom" id="vae-GD-AfV"/>
+                                                                    </constraints>
+                                                                </view>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jbv-zX-QI4">
+                                                                    <rect key="frame" x="75" y="-5" width="30" height="30"/>
+                                                                    <animations/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="30" id="pP6-IE-zR1"/>
+                                                                        <constraint firstAttribute="width" constant="30" id="vBD-E0-Hut"/>
+                                                                    </constraints>
+                                                                    <state key="normal" title="x"/>
+                                                                </button>
+                                                            </subviews>
                                                             <animations/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         </view>
                                                         <animations/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="bottom" secondItem="r3e-1a-wt4" secondAttribute="bottom" id="8rV-q9-hRt"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Jbv-zX-QI4" secondAttribute="trailing" constant="-5" id="IJ9-Ua-7qE"/>
+                                                            <constraint firstItem="r3e-1a-wt4" firstAttribute="leading" secondItem="PWC-WU-aLL" secondAttribute="leading" id="JxD-fh-KF7"/>
+                                                            <constraint firstItem="r3e-1a-wt4" firstAttribute="top" secondItem="PWC-WU-aLL" secondAttribute="top" id="Tqn-on-x7Q"/>
+                                                            <constraint firstItem="Jbv-zX-QI4" firstAttribute="top" secondItem="PWC-WU-aLL" secondAttribute="top" constant="-5" id="os4-hD-38b"/>
+                                                            <constraint firstAttribute="trailing" secondItem="r3e-1a-wt4" secondAttribute="trailing" id="sdq-dW-gDk"/>
+                                                        </constraints>
+                                                        <connections>
+                                                            <outlet property="imageView" destination="VTJ-mq-pHG" id="1Xb-bT-A0Q"/>
+                                                            <outlet property="listingContentView" destination="r3e-1a-wt4" id="Qy0-Mc-aaE"/>
+                                                            <outlet property="removeButton" destination="Jbv-zX-QI4" id="Tj9-8Y-F0R"/>
+                                                        </connections>
                                                     </collectionViewCell>
                                                 </cells>
                                                 <connections>

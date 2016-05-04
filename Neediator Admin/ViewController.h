@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import <AssetsLibrary/AssetsLibrary.h>
+#import <MWPhotoBrowser/MWPhotoBrowser.h>
 #import "NATextView.h"
 #import "NATextfield.h"
 #import "RatingView.h"

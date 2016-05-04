@@ -11,5 +11,5 @@
 @interface NeediatorAdminUtility : NSObject
 
 + (void)alert:(NSString *)title withMessage:(NSString *)message onController:(UIViewController *)controller;
-
++(UIColor *)defaultColor;
 @end

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		673A160A1CD9AE20002F13BA /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 673A16091CD9AE20002F13BA /* AssetsLibrary.framework */; };
+		673A160D1CD9B132002F13BA /* ListingCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 673A160C1CD9B132002F13BA /* ListingCollectionViewCell.m */; };
+		673A16101CD9B4C3002F13BA /* ImageModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 673A160F1CD9B4C3002F13BA /* ImageModalViewController.m */; };
 		67591D4F1CC759EE007913A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 67591D4E1CC759EE007913A6 /* main.m */; };
 		67591D521CC759EE007913A6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 67591D511CC759EE007913A6 /* AppDelegate.m */; };
 		67591D551CC759EE007913A6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67591D541CC759EE007913A6 /* ViewController.m */; };
@@ -46,6 +49,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		673A16091CD9AE20002F13BA /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		673A160B1CD9B132002F13BA /* ListingCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListingCollectionViewCell.h; sourceTree = "<group>"; };
+		673A160C1CD9B132002F13BA /* ListingCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListingCollectionViewCell.m; sourceTree = "<group>"; };
+		673A160E1CD9B4C3002F13BA /* ImageModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageModalViewController.h; sourceTree = "<group>"; };
+		673A160F1CD9B4C3002F13BA /* ImageModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageModalViewController.m; sourceTree = "<group>"; };
 		67591D4A1CC759EE007913A6 /* Neediator Admin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Neediator Admin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		67591D4E1CC759EE007913A6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		67591D501CC759EE007913A6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -94,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				673A160A1CD9AE20002F13BA /* AssetsLibrary.framework in Frameworks */,
 				9DE80D2B58E2A4977CC22A4D /* libPods-Neediator Admin.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -158,6 +167,8 @@
 				8231AF3D1CD4A7B6001A5379 /* NeediatorAdminUtility.h */,
 				8231AF3E1CD4A7B6001A5379 /* NeediatorAdminUtility.m */,
 				82C1D1C81CD8D6CA0058B9C0 /* RatingView.h */,
+				673A160B1CD9B132002F13BA /* ListingCollectionViewCell.h */,
+				673A160C1CD9B132002F13BA /* ListingCollectionViewCell.m */,
 				82C1D1C91CD8D6CA0058B9C0 /* RatingView.m */,
 				67591D561CC759EE007913A6 /* Main.storyboard */,
 				67591D591CC759EE007913A6 /* Assets.xcassets */,
@@ -169,6 +180,8 @@
 				67591D4D1CC759EE007913A6 /* Supporting Files */,
 				8231AF431CD4C521001A5379 /* ListViewController.h */,
 				8231AF441CD4C521001A5379 /* ListViewController.m */,
+				673A160E1CD9B4C3002F13BA /* ImageModalViewController.h */,
+				673A160F1CD9B4C3002F13BA /* ImageModalViewController.m */,
 			);
 			path = "Neediator Admin";
 			sourceTree = "<group>";
@@ -229,6 +242,7 @@
 		89570C81A5FF940EEDE4A887 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				673A16091CD9AE20002F13BA /* AssetsLibrary.framework */,
 				6B116338AA209D87A1A297A5 /* libPods-Neediator Admin.a */,
 			);
 			name = Frameworks;
@@ -418,8 +432,10 @@
 				8231AF3F1CD4A7B6001A5379 /* NeediatorAdminUtility.m in Sources */,
 				6795D4901CCDBB79005B387C /* TPKeyboardAvoidingScrollView.m in Sources */,
 				8231AF451CD4C521001A5379 /* ListViewController.m in Sources */,
+				673A160D1CD9B132002F13BA /* ListingCollectionViewCell.m in Sources */,
 				6795D48E1CCDBB79005B387C /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				67591D551CC759EE007913A6 /* ViewController.m in Sources */,
+				673A16101CD9B4C3002F13BA /* ImageModalViewController.m in Sources */,
 				6795D48D1CCDBB79005B387C /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				8231AF421CD4BF99001A5379 /* StoreDataRealm.m in Sources */,
 				6795D48F1CCDBB79005B387C /* TPKeyboardAvoidingTableView.m in Sources */,
@@ -570,6 +586,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Neediator Admin/NeediatorAdmin.pch";
 				INFOPLIST_FILE = "Neediator Admin/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.advertotechnology.Neediator-Admin";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -584,6 +601,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Neediator Admin/NeediatorAdmin.pch";
 				INFOPLIST_FILE = "Neediator Admin/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.advertotechnology.Neediator-Admin";
 				PRODUCT_NAME = "$(TARGET_NAME)";
