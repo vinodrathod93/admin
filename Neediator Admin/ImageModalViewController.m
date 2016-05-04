@@ -21,6 +21,7 @@
     
     self.imageContentView = [[UIView alloc] init];
     self.bigImageView = [[UIImageView alloc] init];
+    [self.bigImageView setContentMode:UIViewContentModeScaleAspectFit];
     
     self.imageContentView.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame));
     self.bigImageView.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame));
@@ -29,7 +30,7 @@
     self.imageContentView.alpha = 0.7;
     
     [self.view addSubview:self.imageContentView];
-    [self.imageContentView addSubview:self.bigImageView];
+    [self.view addSubview:self.bigImageView];
     
     
     
@@ -64,6 +65,9 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+
 
 - (void)didTouch:(UIGestureRecognizer *)recognizer
 {

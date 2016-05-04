@@ -87,17 +87,63 @@
     self.cameraThumbnails = [[NSMutableArray alloc] init];
     self.galleryThumbnails = [[NSMutableArray alloc] init];
     
+    _allThumbnails = [[NSMutableArray alloc] init];
+    
+    
+     [self loadAssets];
+    
     ALAuthorizationStatus status = [ALAssetsLibrary authorizationStatus];
     
     if (status != ALAuthorizationStatusAuthorized) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Attention" message:@"Please give this app permission to access your photo library in your settings app!" delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil, nil];
         [alert show];
     }
+    
+    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                              message:@"Device has no camera"
+                                                             delegate:nil
+                                                    cancelButtonTitle:@"OK"
+                                                    otherButtonTitles: nil];
+        
+        [myAlertView show];
+    }
+
+    
+    
+    // Ratings View
+    
+    self.ratingsView.backgroundColor     = [UIColor clearColor];
+    self.ratingsView.notSelectedImage    = [UIImage imageNamed:@"star"];
+    self.ratingsView.halfSelectedImage   = [UIImage imageNamed:@"Star Half Empty"];
+    self.ratingsView.fullSelectedImage   = [UIImage imageNamed:@"Star Filled"];
+    
+    
+    self.ratingsView.editable            = YES;
+    self.ratingsView.maxRating           = 5;
+    self.ratingsView.minImageSize        = CGSizeMake(10.f, 10.f);
+    self.ratingsView.midMargin           = 0.f;
+    self.ratingsView.leftMargin          = 0.f;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+
+-(void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    
+   
+    
+    CGFloat lastViewHeight = CGRectGetHeight(((UIView *)[self.contentView.subviews lastObject]).frame);
+    int lastViewY = CGRectGetMaxY(((UIView *)[self.contentView.subviews lastObject]).frame);
+    
+    CGFloat height = lastViewHeight + lastViewY;
+    
+    self.scrollView.contentSize = CGSizeMake(CGRectGetWidth(self.view.frame), height);
 }
 
 
@@ -309,6 +355,22 @@
         storeRealm.notedPoints = self.pointNotedTF.text;
         storeRealm.notes = self.notesTF.text;
         
+        NSMutableArray *array = [[NSMutableArray alloc] init];
+        
+        for (UIImage *image in _allThumbnails) {
+            
+            ImagesRealm *imageRealm = [[ImagesRealm alloc] init];
+            NSData *imageData = UIImagePNGRepresentation(image);
+            
+            imageRealm.thumbImage = imageData;
+            
+            [array addObject:imageRealm];
+        }
+        
+        
+        [storeRealm.images addObjects:array];
+        storeRealm.ratings = [NSNumber numberWithFloat:self.ratingsView.rating];
+        
         [realm addObject:storeRealm];
         [realm commitWriteTransaction];
         
@@ -488,7 +550,7 @@
     return thumbnail;
 }
 
--(void)removeImageSelectionAtIndex:(int)itemIndex {
+-(void)removeImageSelectionAtIndex:(NSInteger)itemIndex {
     
     
     NSArray *positions = [self positionArray];
@@ -595,18 +657,18 @@
         NSLog(@"Entered the loop");
         
         
-        cell.imageView.image = (UIImage *)_allThumbnails[indexPath.item];
+        cell.listingImageView.image = (UIImage *)_allThumbnails[indexPath.item];
         
         
         if (indexPath.item == [_allThumbnails count] -1) {
             NSLog(@"Removed Delete Button");
             
-            cell.imageView.frame = CGRectMake(cell.frame.size.width/2 - (25/2), cell.frame.size.height/2 - (25/2), 25, 25);
+            cell.listingImageView.frame = CGRectMake(cell.frame.size.width/2 - (25/2), cell.frame.size.height/2 - (25/2), 25, 25);
             [cell hideRemoveButton:YES];
         }
         else
         {
-            cell.imageView.frame = CGRectMake(0, 0, 90, 110);
+            cell.listingImageView.frame = CGRectMake(0, 0, 90, 110);
             [cell hideRemoveButton:NO];
         }
         
@@ -622,12 +684,12 @@
     
     ListingCollectionViewCell *cell = (ListingCollectionViewCell *)[[[sender superview] superview] superview];
     
-    UIImage *tappedImage = [cell.imageView image];
+    UIImage *tappedImage = [cell.listingImageView image];
     
     
     if ([self.cameraThumbnails containsObject:tappedImage]) {
         
-        int index = [self.cameraThumbnails indexOfObject:tappedImage];
+        NSInteger index = [self.cameraThumbnails indexOfObject:tappedImage];
         [self.cameraThumbnails removeObject:tappedImage];
         
         
@@ -636,7 +698,7 @@
     }
     else if ([self.galleryThumbnails containsObject:tappedImage]) {
         
-        int index = [self.galleryThumbnails indexOfObject:tappedImage];
+        NSInteger index = [self.galleryThumbnails indexOfObject:tappedImage];
         [self removeImageSelectionAtIndex:index];
     }
     
@@ -679,7 +741,7 @@
         
         NSArray *images = self.finalDisplayArray;
         
-        ImageModalViewController *imageModalVC = [self.storyboard instantiateViewControllerWithIdentifier:@"imageModalVC"];
+        ImageModalViewController *imageModalVC = [[ImageModalViewController alloc] init];
         imageModalVC.image  = images[indexPath.item];
         
         imageModalVC.transitioningDelegate = self;
@@ -690,6 +752,123 @@
     
 }
 
+
+
+
+#pragma mark - Assests
+
+
+- (void)loadAssets {
+    if (NSClassFromString(@"PHAsset")) {
+        
+        // Check library permissions
+        PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatus];
+        if (status == PHAuthorizationStatusNotDetermined) {
+            [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
+                if (status == PHAuthorizationStatusAuthorized) {
+                    [self performLoadAssets];
+                }
+            }];
+        } else if (status == PHAuthorizationStatusAuthorized) {
+            [self performLoadAssets];
+        }
+        
+    } else {
+        
+        // Assets library
+        [self performLoadAssets];
+        
+    }
+}
+
+
+- (void)performLoadAssets {
+    
+    // Initialise
+    _assets = [NSMutableArray new];
+    
+    // Load
+    if (NSClassFromString(@"PHAsset")) {
+        
+        // Photos library iOS >= 8
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            PHFetchOptions *options = [PHFetchOptions new];
+            options.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:NO]];
+            PHFetchResult *fetchResults = [PHAsset fetchAssetsWithOptions:options];
+            [fetchResults enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                [_assets addObject:obj];
+            }];
+            if (fetchResults.count > 0) {
+                //                [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
+                
+                
+                NSLog(@"Gallery Photos fetched");
+            }
+        });
+        
+    } else {
+        
+        // Assets Library iOS < 8
+        _ALAssetsLibrary = [[ALAssetsLibrary alloc] init];
+        
+        // Run in the background as it takes a while to get all assets from the library
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            
+            NSMutableArray *assetGroups = [[NSMutableArray alloc] init];
+            NSMutableArray *assetURLDictionaries = [[NSMutableArray alloc] init];
+            
+            // Process assets
+            void (^assetEnumerator)(ALAsset *, NSUInteger, BOOL *) = ^(ALAsset *result, NSUInteger index, BOOL *stop) {
+                if (result != nil) {
+                    NSString *assetType = [result valueForProperty:ALAssetPropertyType];
+                    if ([assetType isEqualToString:ALAssetTypePhoto] || [assetType isEqualToString:ALAssetTypeVideo]) {
+                        [assetURLDictionaries addObject:[result valueForProperty:ALAssetPropertyURLs]];
+                        NSURL *url = result.defaultRepresentation.url;
+                        [_ALAssetsLibrary assetForURL:url
+                                          resultBlock:^(ALAsset *asset) {
+                                              if (asset) {
+                                                  @synchronized(_assets) {
+                                                      [_assets addObject:asset];
+                                                      if (_assets.count == 1) {
+                                                          // Added first asset so reload data
+                                                          //                                                          [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
+                                                          
+                                                          NSLog(@"First Gallery Photos fetched");
+                                                      }
+                                                  }
+                                              }
+                                          }
+                                         failureBlock:^(NSError *error){
+                                             NSLog(@"operation was not successfull!");
+                                         }];
+                        
+                    }
+                }
+            };
+            
+            // Process groups
+            void (^ assetGroupEnumerator) (ALAssetsGroup *, BOOL *) = ^(ALAssetsGroup *group, BOOL *stop) {
+                if (group != nil) {
+                    [group enumerateAssetsWithOptions:NSEnumerationReverse usingBlock:assetEnumerator];
+                    [assetGroups addObject:group];
+                }
+            };
+            
+            // Process!
+            [_ALAssetsLibrary enumerateGroupsWithTypes:ALAssetsGroupAll
+                                            usingBlock:assetGroupEnumerator
+                                          failureBlock:^(NSError *error) {
+                                              NSLog(@"There is an error");
+                                          }];
+            
+        });
+        
+    }
+    
+}
+
+
+#pragma mark - Helper
 
 
 -(void)showNewActionSheet:(ListingCollectionViewCell *)sender {

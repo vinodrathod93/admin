@@ -12,7 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *listingContentView;
 @property (weak, nonatomic) IBOutlet UIButton *removeButton;
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIImageView *listingImageView;
 
 -(void)hideRemoveButton:(BOOL)hide;
 

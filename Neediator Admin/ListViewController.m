@@ -8,6 +8,7 @@
 
 #import "ListViewController.h"
 #import "ViewController.h"
+#import "WebViewController.h"
 
 @interface ListViewController ()
 
@@ -92,6 +93,96 @@
 
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    
+    StoreDataRealm *listModel = self.listings[indexPath.row];
+    
+    
+    NSString *pdfname = [NSString stringWithFormat:@"%@-%ld.pdf", listModel.name, indexPath.row];
+    
+    NSArray * documentDirectories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask,YES);
+    NSString    * documentDirectory = [documentDirectories objectAtIndex:0];
+    NSString *pdfFileName = [documentDirectory stringByAppendingPathComponent:pdfname];
+    
+    
+    UIGraphicsBeginPDFContextToFile(pdfFileName, CGRectZero, nil);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    UIGraphicsBeginPDFPageWithInfo(CGRectMake(0, 0, 480, 792), nil);
+    
+    CGFloat pageOffset = 30;
+    
+    
+    NSString *coordinate = [NSString stringWithFormat:@"Coordinates: %@,%@", listModel.latitude, listModel.longitude];
+    NSString *name = [NSString stringWithFormat:@"Name: %@", listModel.name];
+    NSString *ratings = [NSString stringWithFormat:@"Rating: %@", listModel.ratings.stringValue];
+    NSString *notes = [NSString stringWithFormat:@"Notes: %@", listModel.notedPoints];
+    NSString *image = @"Images";
+    
+    [name drawInRect:CGRectMake(20, pageOffset, 400, 34) withAttributes:@{
+                                                                          NSFontAttributeName : [UIFont fontWithName:@"AvenirNext-Medium" size:13]
+                                                                          
+                                                                          }];
+    [coordinate drawInRect:CGRectMake(20, 70, 400, 34) withAttributes:@{
+                                                                        NSFontAttributeName : [UIFont fontWithName:@"AvenirNext-Medium" size:13]
+                                                                        
+                                                                        }];
+    [ratings drawInRect:CGRectMake(20, 100, 400, 34) withAttributes:@{
+                                                                                          NSFontAttributeName : [UIFont fontWithName:@"AvenirNext-Medium" size:13]
+                                                                                          }];
+    
+    [notes drawInRect:CGRectMake(20, 150, 400, 50) withAttributes:@{
+                                                                                   NSFontAttributeName : [UIFont fontWithName:@"AvenirNext-Medium" size:13]
+                                                                                   }];
+    
+    
+    [image drawInRect:CGRectMake(20, 200, 400, 34) withAttributes:@{
+                                                                    NSFontAttributeName : [UIFont fontWithName:@"AvenirNext-Medium" size:13]
+                                                                    
+                                                                    }];
+    
+    int i = 0;
+    
+    for (ImagesRealm *imagesRealm in listModel.images) {
+        
+        if (i == listModel.images.count) {
+            NSLog(@"Filled");
+        }
+        else {
+            UIImage *image = [UIImage imageWithData:imagesRealm.thumbImage];
+            
+            int xOffset = (i == 0) ? 20 : image.size.width * i + 50;
+            
+            [image drawInRect:CGRectMake(xOffset, 230, image.size.width, image.size.height)];
+            
+            
+        }
+        i++;
+        
+    }
+    
+    
+    UIGraphicsEndPDFContext();
+    
+    
+    NSLog(@"finalpath--%@",pdfFileName);
+    
+    NSError *error;
+    
+    NSData *datapdf = [NSData dataWithContentsOfFile:pdfFileName options:0 error:&error]; //add url string here
+    
+    if(datapdf)
+        [datapdf writeToFile:pdfFileName atomically:YES];
+    
+    
+    WebViewController *webView = [self.storyboard instantiateViewControllerWithIdentifier:@"webViewVC"];
+    webView.urlString = pdfFileName;
+    webView.pdfName = pdfname;
+    
+    [self.navigationController pushViewController:webView animated:YES];
+    
+    
+    
     
 }
 

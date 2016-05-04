@@ -7,6 +7,7 @@
 //
 
 #import <Realm/Realm.h>
+#import "ImagesRealm.h"
 
 @interface StoreDataRealm : RLMObject
 
@@ -15,5 +16,7 @@
 @property  NSString *longitude;
 @property  NSString *notedPoints;
 @property  NSString *notes;
+@property  NSNumber<RLMFloat> *ratings;
+@property  RLMArray<ImagesRealm> *images;
 
 @end

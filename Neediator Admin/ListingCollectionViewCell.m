@@ -14,8 +14,8 @@
 -(void)awakeFromNib {
     [super awakeFromNib];
     
-    self.removeButton.layer.cornerRadius = 15.f;
-    self.removeButton.layer.borderColor = [UIColor redColor].CGColor;
+    self.removeButton.layer.cornerRadius = self.removeButton.frame.size.width/2;
+    self.removeButton.layer.borderColor = [UIColor clearColor].CGColor;
     self.removeButton.layer.borderWidth = 0.7f;
     self.removeButton.layer.masksToBounds = YES;
     
